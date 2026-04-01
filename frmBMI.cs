@@ -57,39 +57,40 @@ namespace BMICalculator
             if (bmi < 18.5)
             {
                 status = "過輕";
-                lblResult.Text = status;
+                lblResult.Text = $"{resultText}，{status}";
                 lblResult.BackColor = Color.Blue;
             }
             else if (bmi < 24)
             {
                 status = "健康";
-                lblResult.Text = status;
+                lblResult.Text = $"{resultText}，{status}";
                 lblResult.BackColor = Color.Green;
             }
             else if (bmi < 27)
             {
                 status = "過重";
-                lblResult.Text = status;
+                lblResult.Text = $"{resultText}，{status}";
                 lblResult.BackColor = Color.Yellow;
             }
             else if (bmi < 30)
             {
                 status = "輕度肥胖";
-                lblResult.Text = status;
+                lblResult.Text = $"{resultText}，{status}";
                 lblResult.BackColor = Color.Orange;
             }
             else if (bmi < 35)
             {
                 status = "中度肥胖";
-                lblResult.Text = status;
+                lblResult.Text = $"{resultText}，{status}";
                 lblResult.BackColor = Color.OrangeRed;
             }
             else if (bmi >= 35)
             {
                 status = "重度肥胖";
-                lblResult.Text = status;
+                lblResult.Text = $"{resultText}，{status}";
                 lblResult.BackColor = Color.Red;
             }
+
             string record = $"時間: {DateTime.Now:yyyy/MM/dd HH:mm:ss}，身高: {height * 100} cm，體重: {weight} kg，BMI: {resultText}，狀態: {status}";
             bmiHistory.Add(record);
             System.IO.File.AppendAllText(historyFilePath, record + Environment.NewLine);
